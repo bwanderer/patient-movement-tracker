@@ -28,7 +28,7 @@ Timestamp,Joint,RangeOfMotion
 4:30,Wrist,28.8
 4:58,Wrist,90.9
 
-##Build and Run
+Build and Run
 
 Compile:
 
