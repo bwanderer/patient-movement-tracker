@@ -72,7 +72,7 @@ float PatientRecord::GetLowestROM() const {
 }
 
 void PatientRecord::PrintSummary() const {
-    std::cout << "----------------------------------------------\n"
+    std::cout << "\n----------------------------------------------\n"
         << "\tPatient Record\n";
 
         GetPatient().PrintPatient();
