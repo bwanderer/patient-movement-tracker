@@ -13,6 +13,28 @@ A C++ application that processes and analyzes patient movement data from CSV fil
   - Highest and lowest ROM detection
   - Abnormal reading detection
 
+## Project Structure
+
+```csv
+patient-movement-tracker/
+|
+├── include/
+│ ├── Patient.h
+│ ├── MovementReading.h
+│ ├── PatientRecord.h
+│ └── CSVLoader.h
+|
+├── src/
+│ ├── main.cpp
+│ ├── Patient.cpp
+│ ├── MovementReading.cpp
+│ ├── PatientRecord.cpp
+│ └── CSVLoader.cpp
+|
+└── data/
+└── MovementData.csv
+```
+
 ## How It Works
 
 1. Patient information is created and stored.
@@ -23,20 +45,27 @@ A C++ application that processes and analyzes patient movement data from CSV fil
 
 ## Example CSV Format
 
+```csv
 Timestamp,Joint,RangeOfMotion
 4:00,Wrist,20.0
 4:30,Wrist,28.8
 4:58,Wrist,90.9
+...
+```
 
-Build and Run
+## Build and Run
 
 Compile:
 
+```csv
 g++ src/*.cpp -I include -o tracker
+```
 
 Run:
 
+```csv
 ./tracker
+```
 
 ## Technologies
 
