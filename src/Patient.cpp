@@ -8,10 +8,10 @@ Patient::Patient(
     std::string id,
     std::string condition
 ) {
-    this->name = name;
-    this->age = age;
-    this->id = id;
-    this->condition = condition;
+    SetName(name);
+    SetAge(age);
+    SetID(id);
+    SetCondition(condition);
 }
 
 // getters
@@ -35,31 +35,46 @@ std::string Patient::GetCondition() const {
 // setters
 
 void Patient::SetName(std::string name) {
-    this->name = name;
+    if (name.empty()) {
+        std::cout << "\nError: Name cannot be empty.\n";
+        this->name = "Unknown";
+    }
+    else {
+        this->name = name;
+    }
 }
 
 void Patient::SetAge(int age) {
     if (age >= 0) this->age = age;
     else {
-        std::cout << "Error: Invalid age input, age will be set to 0.\n";
+        std::cout << "\nError: Invalid age input.\n";
         this->age = 0;
     }
 }
 
 void Patient::SetID(std::string id) {
-    this->id = id;
+    if (id.empty()) {
+        std::cout << "\nError: ID cannot be empty.\n";
+        this->id = "Unknown";
+    }
+    else {
+        this->id = id;
+    }
 }
 
 void Patient::SetCondition(std::string condition) {
-    this->condition = condition;
+    if (condition.empty()) {
+        std::cout << "\nError: Condition cannot be empty.\n";
+        this->condition = "Unknown";
+    }
+    else {
+        this->condition = condition;
+    }
 }
 
-void Patient::Print() const {
-    std::cout << "----------------------------------------------"
-        << "\nPatient Information"
-        << "\nName: " << name
+void Patient::PrintPatient() const {
+    std::cout << "\nName: " << name
         << "\nAge: " << age
         << "\nID: " << id
-        << "\nCondition: " << condition 
-        << "\n----------------------------------------------\n";
+        << "\nCondition: " << condition << std::endl;
  }

@@ -29,5 +29,5 @@ class Patient {
         void SetID(std::string id);
         void SetCondition(std::string condition);
 
-        void Print() const;
+        void PrintPatient() const;
 };

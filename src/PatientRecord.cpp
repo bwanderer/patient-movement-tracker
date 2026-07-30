@@ -24,7 +24,7 @@ void PatientRecord::CheckForAbnormalReadings(float threshold) const {
             std::cout << "----------------------------------------------"
                 << "\nWarning: Abnormal reading detected.\n";
 
-            reading.Print();
+            reading.PrintReading();
         }
     }
 }
@@ -72,11 +72,20 @@ float PatientRecord::GetLowestROM() const {
 }
 
 void PatientRecord::PrintSummary() const {
-    std::cout << "----------------------------------------------"
-        << "\nPatient Record\n";
-        GetPatient().Print();
+    std::cout << "----------------------------------------------\n"
+        << "\tPatient Record\n";
+
+        GetPatient().PrintPatient();
+
+        std::cout << "\n   .......................................\n";
+
         for (const MovementReading& reading : readings) {
-            reading.Print();
+            reading.PrintReading();
         }
-    std::cout << "----------------------------------------------\n";
-}
+
+    std::cout << "\n   .......................................\n"
+        << "\nAverage ROM: " << CalculateAverageROM() 
+        << "\nHighest ROM: " << GetHighestROM()
+        << "\nLowest ROM: " << GetLowestROM()
+        << "\n----------------------------------------------\n";
+    }

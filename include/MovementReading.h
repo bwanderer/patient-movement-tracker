@@ -26,5 +26,5 @@ class MovementReading {
         void SetJoint(std::string joint);
         void SetRangeOfMotion(float rangeOfMotion);
 
-        void Print() const;
+        void PrintReading() const;
 };

@@ -30,16 +30,17 @@ float MovementReading::GetRangeOfMotion() const {
 
 void MovementReading::SetTimestamp(std::string timestamp) {
     if (timestamp.empty()) {
-        std::cout << "Error: Timestamp cannot be empty.\n";
+        std::cout << "\nError: Timestamp cannot be empty.\n";
         this->timestamp = "Unknown";
     }
     else {
         this->timestamp = timestamp;
-    }}
+    }
+}
 
 void MovementReading::SetJoint(std::string joint) {
     if (joint.empty()) {
-        std::cout << "Error: Joint cannot be empty.\n";
+        std::cout << "\nError: Joint cannot be empty.\n";
         this->joint = "Unknown";
     }
     else {
@@ -52,16 +53,13 @@ void MovementReading::SetRangeOfMotion(float rangeOfMotion) {
         this->rangeOfMotion = rangeOfMotion;
     }
     else {
-        std::cout << "Error: Invalid range of motion.\n";
+        std::cout << "\nError: Invalid range of motion.\n";
         this->rangeOfMotion = 0.0;
     }
 }
 
-void MovementReading::Print() const {
-    std::cout << "----------------------------------------------"
-        << "\nMovement Reading Information"
-        << "\nTimestamp: " << timestamp
+void MovementReading::PrintReading() const {
+    std::cout << "\nTimestamp: " << timestamp
         << "\nJoint: " << joint
-        << "\nROM: " << rangeOfMotion
-        << "\n----------------------------------------------\n";
+        << "\nROM: " << rangeOfMotion << std::endl;
 }
